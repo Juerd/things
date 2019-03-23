@@ -28,12 +28,13 @@ translate([breedte,0,diepte]) rotate([0,180,0]) difference() {
     translate([6,hoogte-40-25,-meh]) cube([12,25,10+2*meh]);  
     
     // nachtschoot
-    translate([7,40,-meh]) cube([10,40,10+2*meh]);
+    // 2 mm extra boven+onder ivm ronde hoek 4 mm frees
+    translate([7,40-2,-meh]) cube([10,40+2*2,10+2*meh]);
     
     if (dubbeledeur) {
         // nachtschoot moet kunnen uitdraaien draaien bij dubbele deur
-        translate([7+2,40,-meh]) cube([10,40,10+2*meh]);
-        rotate([0,30,0]) translate([0,40,-8]) cube([10,40,20+2*meh]);
+        translate([7+2,40-2,-meh]) cube([10,40+2*2,10+2*meh]);
+        rotate([0,30,0]) translate([0,40-2,-8]) cube([10,40+2*2,20+2*meh]);
     }
     
     // schroefgaten zitten al op vaste afstanden in de deur, dus niet parametrisch
